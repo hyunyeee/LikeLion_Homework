@@ -81,9 +81,8 @@ const PEOPLE_INFOS = [
 
 // 식권 종이를 출력합니다. 식권 종이에는 이름과 금액이 있어야합니다.
 const getTicket = (peopleName, type, food) => {
-
     // PEOPLE_TYPE 요소와 type 일치여부 : boolean 값을 가짐
-    const peopleType = PEOPLE_TYPE.find((peopleType) => peopleType === type)
+    const peopleType = PEOPLE_TYPE.find((peopleType) => peopleType === type);
 
     // price값 설정
     //  + : string 앞에 +가 있는 경우 -> string 타입을 number 타입으로 변환
@@ -112,7 +111,6 @@ const getTicket = (peopleName, type, food) => {
         default:
             break;
     }
-
     //getTicket은 name, price를 return하는 함수
     return {name: peopleName, price: price};
 };
@@ -122,9 +120,10 @@ const getTickets = (ticketInfos) => {
     // getTicket 함수를 이용해 PEOPLE_INFOS가 내야하는 식권 정보를 알아내세요
 
     // ticketInfo를 map 함수를 이용해 각 티켓별 name, type, food 매개변수로 사용
-    const tickets = ticketInfos.map((people) => {
+    const tickets = ticketInfos.map((people) =>
         getTicket(people.name, people.type, people.food)
-    });
+    );
+
     return tickets;
 };
 
