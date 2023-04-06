@@ -66,7 +66,10 @@ const createTodo = (newTodo) => {
 // read: 전체 목록을 하나씩 읽어는다.
 const readTodo = () => {
     // todos를 하나씩 출력 형식에 맞춰 출력
-    console.log(todos);
+
+    for (let i = 0; i < todos.length; i++) {
+        console.log(`id: ${todos[i].id},`, `title: ${todos[i].title},`, `text: ${todos[i].text}`);
+    }
 };
 
 // 에러처리: 만약 업데이트하려는 todo를 찾을 수 없는 경우 'id = (n)에 맞는 todo를 찾을 수 없습니다.' 를 출력하세요.
